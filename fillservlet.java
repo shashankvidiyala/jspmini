@@ -3,6 +3,7 @@ import javax.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.util.*;
 /**
  * Servlet implementation class UserDataServlet
  */
@@ -19,7 +20,7 @@ try
 Class.forName("com.mysql.jdbc.Driver");
 String url = "jdbc:mysql://localhost:3306/blog";
 	String username = "root";
-	String password = "sh_123";
+	String password = "";
 //connecting to databse
 Connection con = DriverManager.getConnection(url, username, password);
 //to send and execute your sql query
@@ -27,7 +28,8 @@ Statement st=con.createStatement();
 String name = request.getParameter("na");
 		String title = request.getParameter("title");
 		String post = request.getParameter("post");
-String sql="insert into posts(author_name,title,post) values('"+name+"','"+title+"','"+post+"')";
+String sql="insert into news(author,headline,post) values('"+name+"','"+title+"','"+post+"');";
+out.print(sql);
 st.executeUpdate(sql);
 RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
 rd.include(request,response);
