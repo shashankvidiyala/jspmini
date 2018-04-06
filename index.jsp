@@ -1,12 +1,16 @@
 <html>
     <body>
-        <%@page import="java.sql.*;javax.sql.*; java.io.*;javax.servlet.*;javax.servlet.http.*;" %>
+        <%@ page import="java.sql.*" %>
+        <%@ page import="java.io.*" %>
+        <%@ page import="javax.servlet.*" %>
+        <%@ page import="javax.servlet.http.*" %>
+        
         <%
         
             Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost:3306/blog";
             String username = "root";
-            String password = "";
+            String password = "root";
             //connecting to databse
             Connection con = DriverManager.getConnection(url, username, password);
             Statement stmt=con.createStatement();
