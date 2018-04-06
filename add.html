@@ -1,0 +1,114 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed" rel="stylesheet">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+	<script type="text/javascript">
+		function validateForm(event)
+		{
+    event.preventDefault(); // this will prevent the submit event.
+    if(document.f.name.value=="")
+    {
+    	alert("User Name cannot be left blank");
+    	document.f.na.focus();
+    	return false;
+    }
+    else if(document.f.title.value=="")
+    {
+    	alert("Title cannot be left blank");
+    	document.loginform.title.focus();
+    	return false;
+    }
+    else if (document.f.post.value=="") {
+    	alert("Post cannot be left blank");
+    	document.loginform.post.focus();
+    	return false;
+    }
+    else {
+        document.f.submit();// fire submit event
+    }
+}
+</script>
+<style type="text/css">
+#b{
+	background-image: url(img/w.jpg);
+	font-family: 'IBM Plex Sans Condensed', sans-serif;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	overflow: hidden;
+}
+.profile-box{
+	background-color: #93DCE7;
+	padding: 20px;
+	opacity: 0.9;
+}
+.btn{
+  border: none;
+  padding: 0;
+  background: none;
+}
+.btn:hover{
+	color: #CEB9B5;
+}
+}
+</style>
+</head>
+<body id="b">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="index.jsp" style="color:#000000;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.jsp" style="color:#000000;">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="add.html" style="color:#000000;">Add Article</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<section style="padding: 40px 0px">
+	<div class="container">
+		<div class="profile-box">
+			<div class="row">
+				<form role="form" class="col-md-9 go-right" action="fill" name="f" method="post">
+					<h2>Wanna Post?</h2>
+					<div class="form-group">
+						<input id="name" name="na" type="text" class="form-control" required>
+						<label for="na">Your Name</label>
+					</div>
+					<div class="form-group">
+						<input id="phone" name="title" type="tel" class="form-control" required>
+						<label for="title">Title</label>
+					</div>
+					<div class="form-group">
+						<textarea id="message" name="post" class="form-control" required></textarea>
+						<label for="post">Post</label>
+					</div>
+					<input type="submit" name="submit" class="btn" onSubmit="return validateForm(event);"/>
+				</form>  
+			</div>   
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</section>
+</body>
+</html>

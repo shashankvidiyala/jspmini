@@ -1,0 +1,11 @@
+<web-app>
+ <servlet>
+        <servlet-name>fs</servlet-name>
+        <servlet-class>fillservlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>fs</servlet-name>
+        <url-pattern>/fill</url-pattern>
+    </servlet-mapping>
+</web-app>
